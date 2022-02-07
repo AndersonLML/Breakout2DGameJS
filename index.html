@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gamedev Canvas Workshop</title>
+    <title>Gamedev Canvas Anderson</title>
     <style>
         * { padding: 0; margin: 0; }
         canvas { background: #eee; display: block; margin: 0 auto; }
@@ -78,16 +78,15 @@
             if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
                 dx = (-dx*1.1);
                 color = "red";
-                color = "purple";
             }
             if(y + dy < ballRadius) {
                 dy = (-dy*1.1);
-                color = "pink";
+                color = "green";
             }
             else if (y + dy > canvas.height-ballRadius) {
                 if(x > paddleX && x < paddleX + paddleWidth) {
                     dy = (-dy*1.1);
-                    color = "green";
+                    color = "yellow";
                 }
                 else {
                     alert("GAME OVER");
