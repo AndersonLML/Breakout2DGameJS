@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>GameDev Anderson</title>
+=======
+    <title>Gamedev Canvas Anderson</title>
+>>>>>>> d06acbcc2c0527a2390463e778c9de5ff0dd8a8c
     <style>
         * { padding: 0; margin: 0; }
         canvas { background: #eee; display: block; margin: 0 auto; }
@@ -35,6 +39,7 @@
 
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
+<<<<<<< HEAD
         document.addEventListener("mousemove", mouseMoveHandler, false);
 
     var batsu1 = document.createElement("input");  
@@ -58,6 +63,9 @@
     batsu.style.color = '#4297A0';
     batsu.onclick = function() { leftPressed=false;rightPressed=true; };  
     document.body.appendChild(batsu);
+=======
+        document.addEventListener("mousemove", mouseMoveHandler, false); 
+>>>>>>> d06acbcc2c0527a2390463e778c9de5ff0dd8a8c
 
         function keyDownHandler(e) {
             if(e.key == "Right" || e.key == "ArrowRight") {
@@ -77,14 +85,22 @@
             leftPressed = false;
         }
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d06acbcc2c0527a2390463e778c9de5ff0dd8a8c
         function mouseMoveHandler(e) {
             var relativeX = e.clientX - canvas.offsetLeft;
             if(relativeX > 0 && relativeX < canvas.width) {
                 paddleX = relativeX - paddleWidth/2;
             }
+<<<<<<< HEAD
         }
 
+=======
+        }       
+>>>>>>> d06acbcc2c0527a2390463e778c9de5ff0dd8a8c
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -108,6 +124,7 @@
 
             if(x + dx > canvas.width-ballRadius) {
                 dx = (-dx*1.1);
+<<<<<<< HEAD
                 color = "#21B6A8";
             }
             if (x + dx < ballRadius) {
@@ -117,11 +134,22 @@
             if(y + dy < ballRadius) {
                 dy = (-dy*1.1);
                 color = "#32CD30";
+=======
+                color = "red";
+            }
+            if(y + dy < ballRadius) {
+                dy = (-dy*1.1);
+                color = "green";
+>>>>>>> d06acbcc2c0527a2390463e778c9de5ff0dd8a8c
             }
             else if (y + dy > canvas.height-ballRadius) {
                 if(x > paddleX && x < paddleX + paddleWidth) {
                     dy = (-dy*1.1);
+<<<<<<< HEAD
                     color = "#18A558";
+=======
+                    color = "yellow";
+>>>>>>> d06acbcc2c0527a2390463e778c9de5ff0dd8a8c
                 }
                 else {
                     alert("GAME OVER");
