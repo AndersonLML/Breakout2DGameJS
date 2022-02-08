@@ -40,10 +40,10 @@
     var batsu1 = document.createElement("input");  
     batsu1.type = 'button';  
     batsu1.value = 'Esquerda'; 
-    batsu1.style.height = '30px';
-    batsu1.style.width = '150px';
-    batsu1.style.marginLeft = '37.5%'
-    batsu1.style.marginTop = '20px'
+    batsu1.style.height = '70px';
+    batsu1.style.width = '300px';
+    batsu1.style.marginLeft = '18%'
+    batsu1.style.marginTop = '100px'
     batsu1.style.color = '#4297A0';
     batsu1.onclick = function() { rightPressed=false;leftPressed=true; };  
     document.body.appendChild(batsu1);
@@ -51,10 +51,10 @@
     var batsu = document.createElement("input");  
     batsu.type = 'button';
     batsu.value = 'Direita';
-    batsu.style.height = '30px';
-    batsu.style.width = '150px'; 
+    batsu.style.height = '70px';
+    batsu.style.width = '300px'; 
     batsu.style.marginLeft = '40px' 
-    batsu.style.marginTop = '20px'
+    batsu.style.marginTop = '100px'
     batsu.style.color = '#4297A0';
     batsu.onclick = function() { leftPressed=false;rightPressed=true; };  
     document.body.appendChild(batsu);
@@ -107,37 +107,37 @@
             drawPaddle();
 
             if(x + dx > canvas.width-ballRadius) {
-                dx = (-dx*1.1);
+                dx = (-dx);
                 color = "#21B6A8";
             }
             if (x + dx < ballRadius) {
-                dx = (-dx*1.1);
+                dx = (-dx);
                 color = "#76B947";
             }
             if(y + dy < ballRadius) {
-                dy = (-dy*1.1);
+                dy = (-dy);
                 color = "#32CD30";
             }
             else if (y + dy > canvas.height-ballRadius) {
                 if(x > paddleX && x < paddleX + paddleWidth) {
-                    dy = (-dy*1.1);
+                    dy = (-dy);
                     color = "#18A558";
                 }
                 else {
-                    alert("GAME OVER");
+                    alert("Tente outra vez");
                     document.location.reload();
                     clearInterval(interval);
                 }
             }
 
             if(rightPressed) {
-                paddleX += 7;
+                paddleX += 5;
                 if (paddleX + paddleWidth > canvas.width) {
                     paddleX = canvas.width - paddleWidth;
                 }
             }
             else if(leftPressed) {
-                paddleX -=7;
+                paddleX -=5;
                 if (paddleX < 0){
                     paddleX =0;
                 }
