@@ -41,18 +41,17 @@
         var element = document.createElement("div");
 
         element.style.height = "200px";
-        element.style.width = "500px";
-        element.style.display = 'flex';
-        element.style.margin = '0 auto';
+        //element.style.width = "500px";
+        element.style.display = 'content';
+        element.style.margin = '0, auto';
 
         
         document.body.appendChild(element);
 
         var botao = document.createElement("button");
         botao.textContent = "<";
-        botao.style.fontSize = '100px'
+        botao.style.fontSize = '100px';
         botao.style.float = 'left';
-        botao.style.margin = '0 auto';
         botao.style.marginTop = '50px';
         botao.style.width = '150px';
         botao.style.backgroundImage = '/imagens/botaoesquerdo.jpg';
@@ -65,11 +64,10 @@
 
         var botao1 = document.createElement("button");
         botao1.textContent = ">";
-        botao1.style.fontSize = '100px'
-        botao1.style.float = 'right'
-        botao1.style.margin = '0 auto';
-        botao1.style.marginTop = '50px'
-        botao1.style.width = '150px'
+        botao1.style.fontSize = '100px';
+        botao1.style.float = 'right';
+        botao1.style.marginTop = '50px';
+        botao1.style.width = '150px';
         botao1.style.backgroundImage = '/imagens/botaodireito.jpg';
         botao1.onclick = function()
      {
@@ -144,9 +142,9 @@
                     color = "#18A558";
                 }
                 else {
-                    alert("Tente outra vez");
-                    document.location.reload();
-                    clearInterval(interval);
+                    //alert("Tente outra vez");
+                    //document.location.reload();
+                    //clearInterval(interval);
                 }
             }
 
