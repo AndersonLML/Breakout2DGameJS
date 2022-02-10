@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>GameDev Anderson</title>
     <style>
-        * { padding: 0; margin: 0; }
+        * { padding: 0; margin: 0;}
         canvas { background: #eee; display: block; margin: 0 auto; }
+
     </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="480" height="320"></canvas>
-        
+    <canvas id="myCanvas"  width="624" height="416"></canvas>
+     
     <script>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
@@ -37,27 +38,46 @@
         document.addEventListener("keyup", keyUpHandler, false);
         document.addEventListener("mousemove", mouseMoveHandler, false);
 
-    var batsu1 = document.createElement("input");  
-    batsu1.type = 'button';  
-    batsu1.value = 'Esquerda'; 
-    batsu1.style.height = '70px';
-    batsu1.style.width = '300px';
-    batsu1.style.marginLeft = '18%'
-    batsu1.style.marginTop = '100px'
-    batsu1.style.color = '#4297A0';
-    batsu1.onclick = function() { rightPressed=false;leftPressed=true; };  
-    document.body.appendChild(batsu1);
+        var element = document.createElement("div");
 
-    var batsu = document.createElement("input");  
-    batsu.type = 'button';
-    batsu.value = 'Direita';
-    batsu.style.height = '70px';
-    batsu.style.width = '300px'; 
-    batsu.style.marginLeft = '40px' 
-    batsu.style.marginTop = '100px'
-    batsu.style.color = '#4297A0';
-    batsu.onclick = function() { leftPressed=false;rightPressed=true; };  
-    document.body.appendChild(batsu);
+        element.style.height = "200px";
+        element.style.width = "500px";
+        element.style.display = 'flex';
+        element.style.margin = '0 auto';
+
+        
+        document.body.appendChild(element);
+
+        var botao = document.createElement("button");
+        botao.textContent = "<";
+        botao.style.fontSize = '100px'
+        botao.style.float = 'left';
+        botao.style.margin = '0 auto';
+        botao.style.marginTop = '50px';
+        botao.style.width = '150px';
+        botao.style.backgroundImage = '/imagens/botaoesquerdo.jpg';
+        botao.onclick = function()
+     {
+         rightPressed=false;
+        leftPressed=true;
+     }
+     element.appendChild(botao);
+
+        var botao1 = document.createElement("button");
+        botao1.textContent = ">";
+        botao1.style.fontSize = '100px'
+        botao1.style.float = 'right'
+        botao1.style.margin = '0 auto';
+        botao1.style.marginTop = '50px'
+        botao1.style.width = '150px'
+        botao1.style.backgroundImage = '/imagens/botaodireito.jpg';
+        botao1.onclick = function()
+     {
+         rightPressed=true;
+        leftPressed=false;
+}
+        
+        element.appendChild(botao1);
 
         function keyDownHandler(e) {
             if(e.key == "Right" || e.key == "ArrowRight") {
